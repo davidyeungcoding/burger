@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
     burger.selectAll(function(data) {
         var burgerObject = {
-            burger: data
+            burgers: data
         };
         console.log(burgerObject);
         res.render('index', burgerObject);
@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/api/burgers', function(req, res) {
-    burger.insertOne('name', req.body.name, function(result) {
+    burger.insertOne('burger_name', req.body.name, function(result) {
         res.json({id: result.id})
     });
 });
