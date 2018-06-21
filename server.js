@@ -18,7 +18,7 @@ var app = express();
 // || APP ||
 // =========
 
-app.use(express.static('publlic'));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
