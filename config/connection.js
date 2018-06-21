@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     port: 3306,
-    password: '',
+    password: 'hawking0s',
     database: 'burgers_db'
 });
 

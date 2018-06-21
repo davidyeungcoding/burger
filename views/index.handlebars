@@ -1,8 +1,8 @@
-<div class='container'>
+<div class='row' id='header-img'>
+    <h1 class='col s12'>Eat Da Burger!</h1>
+</div>
 
-    <div class='row'>
-        <h1 class='col s12'>Eat Da Burger!</h1>
-    </div>
+<div class='container'>
 
     <div class='row'>
         <div class='col s4'>
@@ -19,20 +19,21 @@
         <div class='col s4'>
             <form class='add-burger'>
                 <h3>Add a Burger!</h3>
-                <div class='form-group'>
-                    <label for='burger-name'>Burger Name</label>
+                <div class='input-field'>
+                    <i class="fas fa-utensils prefix"></i>
                     <input type='text' id='burger-name' name='name'>
+                    <label for='burger-name'>Burger Name</label>
                 </div>
-                <button type='submit'>Add Burger</button>
+                <button class='btn waves-effect waves-light' type='submit'>Add Burger</button>
             </form>
         </div>
 
         <div class='col s4'>
             <h3>Conquered:</h3>
-            <ul>
+            <ul id='conqList'>
                 {{#each burgers}}
                     {{#if devoured}}
-                        {{> burgers/burger-block devoured=true}}
+                        <li>{{burger_name}}</li>
                     {{/if}}
                 {{/each}}
             </ul>

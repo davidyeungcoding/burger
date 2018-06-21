@@ -1,6 +1,8 @@
 <li>
-    {{name}}
-    <button class='change-devoured' data-id='{{id}}' data-newdevoured='{{devoured}}'>
-        {{#unless devoured}}Consume!{{/unless}}
-    </button>
+    <span>
+        <button class='change-devoured btn waves-effect waves-light conbtn' data-id='{{id}}' data-newdevoured='{{devoured}}'>
+            {{#unless devoured}}Consume!{{/unless}}
+        </button>
+        {{burger_name}}
+    </span>
 </li>
