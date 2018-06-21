@@ -7,6 +7,22 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var routes = require('./controllers/burgers_contoller.js');
 
+// ==================
+// || HEROKU SETUP ||
+// ==================
+
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+else {
+    connection = mysql.createConnection ({
+        host: 'localhost',
+        user: 'root',
+        password: 'hacktheplanet',
+        database: 'todoagain_db'
+    });
+};
+
 // ===============
 // || VARIABLES ||
 // ===============
@@ -24,6 +40,7 @@ app.use(bodyParser.json());
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(routes);
+
 
 // ==============
 // || LISTENER ||
