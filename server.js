@@ -6,22 +6,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var routes = require('./controllers/burgers_contoller.js');
-
-// ==================
-// || HEROKU SETUP ||
-// ==================
-
-if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-}
-else {
-    connection = mysql.createConnection ({
-        host: 'localhost',
-        user: 'root',
-        password: 'hacktheplanet',
-        database: 'todoagain_db'
-    });
-};
+var mysql = require('mysql');
 
 // ===============
 // || VARIABLES ||
