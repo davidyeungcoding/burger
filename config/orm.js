@@ -19,8 +19,9 @@ var orm = {
         });
     },
 
-    updateOne: function(table, colName, newValue, itemID, cb) {
-        var queryString = `UPDATE ${table} SET ${colName} = ${newValue} WHERE id = ${itemID};`;
+    updateOne: function(table, condition, cb) {
+        var queryString = `UPDATE ${table} SET devoured = true WHERE ${condition};`;
+        console.log(queryString);
         connection.query(queryString, function(err, result) {
             if (err) throw err;
             cb(result);
